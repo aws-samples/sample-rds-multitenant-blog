@@ -19,7 +19,8 @@ The CDK stack in this repository deploys the following resources:
 
 Before you begin, ensure you have the following:
 
-- An AWS account with the prerequisites fulfilled
+- An AWS account
+- [CUR 2.0](https://docs.aws.amazon.com/cur/latest/userguide/data-exports-migrate-two.html) enabled and mapped to a Glue table in the same account
 - AWS CDK installed and configured
 - Node.js and npm installed
 - Basic knowledge of AWS services, particularly RDS, Athena, and Glue
@@ -41,8 +42,8 @@ The deployment script supports both deployment and destruction of stacks with th
 ### Parameters
 
 - `mode`: Either `deploy` or `destroy`
-- `glueCURDBName`: Name of the Glue Cost and Usage Report (CUR) database
-- `glueCURDBTable`: Name of the Glue CUR table
+- `glueCURDBName`: Name of the Glue Cost and Usage Report (CUR 2.0) database
+- `glueCURDBTable`: Name of the Glue CUR 2.0 table
 - `region`: AWS region for deployment
 
 ### Deployment Example
