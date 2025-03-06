@@ -206,7 +206,7 @@ export class MultitenancyPerformanceInsightsStack extends cdk.Stack {
         ],
       },
       schedule: {
-        scheduleExpression: 'cron(50 * * * ? *)',
+        scheduleExpression: 'cron(50 */12 * * ? *)',
       },
       schemaChangePolicy: {
         updateBehavior: 'UPDATE_IN_DATABASE',

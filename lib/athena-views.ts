@@ -49,7 +49,7 @@ export const ATHENA_VIEW_COST_ALLOCATION = (
         cur.line_item_usage_type,
         cur.line_item_line_item_type,
         cur.line_item_resource_id,
-        cur.product_database_engine,
+        cur.product['database_engine'] product_database_engine,
         cur.product_instance_type
     FROM "AwsDataCatalog"."${glueCURDBName}"."${CURDBTable}" cur
     INNER JOIN "AwsDataCatalog"."${glueDBName}"."${piDBView}" pi_view ON 
