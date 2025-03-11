@@ -2,7 +2,7 @@
 
 This repository contains the AWS CDK code and resources associated with the blog post "Improving Cost Visibility of Amazon RDS Multi-Tenant Instance with Performance Insights and Amazon Athena".
 
-You can find the blogpost here: < url >
+You can find the blogpost here: https://aws-blogs-prod.amazon.com/database/improve-cost-visibility-of-an-amazon-rds-multi-tenant-instance-with-performance-insights-and-amazon-athena
 
 ## Overview
 
