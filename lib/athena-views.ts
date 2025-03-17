@@ -42,8 +42,8 @@ export const ATHENA_VIEW_COST_ALLOCATION = (
     SELECT
         cur.line_item_usage_start_date                                  as timestamp,
         pi_view.user_name                                               as tenant_id,
-        cur.line_item_unblended_cost                                    as database_cost,
-        pi_view.perc_utilization_rebased * cur.line_item_unblended_cost as tenant_cost,
+        CASE WHEN cur.line_item_line_item_type = 'DiscountedUsage' THEN cur.reservation_effective_cost    WHEN cur.line_item_line_item_type = 'RIFee' THEN cur.reservation_unused_amortized_upfront_fee_for_billing_period + cur.reservation_unused_recurring_fee    WHEN cur.line_item_line_item_type = 'Fee' AND cur.reservation_reservation_a_r_n <> '' THEN 0    ELSE cur.line_item_unblended_cost   END                                    as database_cost,
+        pi_view.perc_utilization_rebased * CASE WHEN cur.line_item_line_item_type = 'DiscountedUsage' THEN cur.reservation_effective_cost    WHEN cur.line_item_line_item_type = 'RIFee' THEN cur.reservation_unused_amortized_upfront_fee_for_billing_period + cur.reservation_unused_recurring_fee    WHEN cur.line_item_line_item_type = 'Fee' AND cur.reservation_reservation_a_r_n <> '' THEN 0    ELSE cur.line_item_unblended_cost   END as tenant_cost,
         pi_view.total_compute_power,
         pi_view.perc_utilization_rebased                                as perc_utilization_rebased,
         cur.line_item_usage_type,
