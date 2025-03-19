@@ -75,7 +75,7 @@ After deployment, you can use the Athena views to analyze your RDS Performance I
 
 ## Blog Post
 
-For a detailed walkthrough and explanation of the solution, please refer to the accompanying blog post: [Link to be added when published]
+For a detailed walkthrough and explanation of the solution, please refer to the accompanying blog post: https://aws.amazon.com/blogs/database/improve-cost-visibility-of-an-amazon-rds-multi-tenant-instance-with-performance-insights-and-amazon-athena/
 
 ## Contributing
 
